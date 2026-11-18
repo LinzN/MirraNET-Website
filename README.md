@@ -1,6 +1,6 @@
 # MirraNET website
 
-Source of [mirranet.de](https://mirranet.de), the home page of MirraNET – the system behind [STEM](https://github.com/LinzN/Stem) and [Mirra](https://github.com/LinzN/mirra), [FreeX](https://github.com/FreeX-Studio), [Ondura](https://github.com/Ondura-Suite), [Parla](https://github.com/Parla-Studio) and the libraries under [LinzN](https://github.com/LinzN). Plain HTML, CSS and a little JavaScript, in English and German – no framework, no external requests from the visitor's browser. Built the same way as the [FreeX](https://github.com/FreeX-Studio/FreeX-Website) and [Ondura](https://github.com/Ondura-Suite/Ondura-Website) websites.
+Source of [www.mirranet.de](https://www.mirranet.de), the home page of MirraNET – the system behind [STEM](https://github.com/LinzN/Stem) and [Mirra](https://github.com/LinzN/mirra), [FreeX](https://github.com/FreeX-Studio), [Ondura](https://github.com/Ondura-Suite), [Parla](https://github.com/Parla-Studio) and the libraries under [LinzN](https://github.com/LinzN). Plain HTML, CSS and a little JavaScript, in English and German – no framework, no external requests from the visitor's browser. Built the same way as the [FreeX](https://github.com/FreeX-Studio/FreeX-Website) and [Ondura](https://github.com/Ondura-Suite/Ondura-Website) websites.
 
 ## Languages
 
@@ -41,22 +41,14 @@ The workflow [`deploy.yml`](.github/workflows/deploy.yml) builds the pages, runs
 ## One-time setup
 
 1. **Pages:** *Settings › Pages › Build and deployment › Source:* **GitHub Actions**.
-2. **Custom domain:** *Settings › Pages › Custom domain:* `mirranet.de`, then tick *Enforce HTTPS* once the certificate is issued.
-3. **DNS (Hetzner),** in the `mirranet.de` zone – `mirranet.de` is an apex domain, so it needs A/AAAA records instead of a CNAME:
+2. **Custom domain:** *Settings › Pages › Custom domain:* `www.mirranet.de`, then tick *Enforce HTTPS* once the certificate is issued.
+3. **DNS (Hetzner),** in the `mirranet.de` zone:
 
    ```
-   @     A      185.199.108.153
-   @     A      185.199.109.153
-   @     A      185.199.110.153
-   @     A      185.199.111.153
-   @     AAAA   2606:50c0:8000::153
-   @     AAAA   2606:50c0:8001::153
-   @     AAAA   2606:50c0:8002::153
-   @     AAAA   2606:50c0:8003::153
    www   CNAME  linzn.github.io.
    ```
 
-   Replace the existing A/AAAA records of `@` – leave `MX`, `TXT` (SPF, DKIM, DMARC) and all subdomains (`builds`, `apt`, `freex`, `ondura`, the mail host …) untouched. If the `MX` record points at `mirranet.de` itself rather than a host name like `mail.mirranet.de`, give the mail server its own A record first and point `MX` there, otherwise mail would go to GitHub.
+   The bare domain `mirranet.de` stays on MirraNET's own server, which redirects it to `https://www.mirranet.de/` (keep path and query, `301`). Mail and all other subdomains are not affected.
 4. Optional – **verify the domain** (*GitHub › Settings › Pages › Add a domain*) so nobody else can claim it. GitHub shows a TXT record to add at Hetzner.
 
 ### Optional: deploy immediately after a release

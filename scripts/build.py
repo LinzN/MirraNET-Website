@@ -29,7 +29,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 OUT = ROOT / (sys.argv[1] if len(sys.argv) > 1 else "site")
-SITE_URL = "https://mirranet.de/"
+SITE_URL = "https://www.mirranet.de/"
 LANGS = ("en", "de")
 
 # Template name -> output path per language.
