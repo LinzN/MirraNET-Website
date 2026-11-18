@@ -233,7 +233,7 @@
         </ol>
 
         <div class="maven">
-          <p>{{de}}Eine Bibliothek in einem eigenen Projekt nutzen:{{en}}Use a library in your own project:{{/}}</p>
+          <p>{{de}}Java-Bibliotheken in einem eigenen Maven-Projekt nutzen:{{en}}Use the Java libraries in your own Maven project:{{/}}</p>
           <div class="maven__box">
             <pre><code>&lt;repository&gt;
   &lt;id&gt;mirranet&lt;/id&gt;
@@ -241,6 +241,19 @@
 &lt;/repository&gt;</code></pre>
             <button class="copy" type="button" data-copy>{{de}}Kopieren{{en}}Copy{{/}}</button>
           </div>
+        </div>
+
+        <div class="maven">
+          <p>{{de}}Linux-Pakete aus der Paketquelle <code>apt.mirranet.de</code> (Debian 12+, Ubuntu 22.04+). APT prüft jedes Paket mit dem Signaturschlüssel der Quelle; Updates kommen danach mit <code>sudo apt upgrade</code>:{{en}}Linux packages from the package repository <code>apt.mirranet.de</code> (Debian 12+, Ubuntu 22.04+). APT checks every package against the repository's signing key; updates then arrive with <code>sudo apt upgrade</code>:{{/}}</p>
+          <div class="maven__box">
+            <pre><code>sudo install -d /etc/apt/keyrings
+sudo curl -fsSL https://apt.mirranet.de/mirranet.gpg -o /etc/apt/keyrings/mirranet.gpg
+echo "deb [signed-by=/etc/apt/keyrings/mirranet.gpg] https://apt.mirranet.de stable main" \
+    | sudo tee /etc/apt/sources.list.d/mirranet.list
+sudo apt update</code></pre>
+            <button class="copy" type="button" data-copy>{{de}}Kopieren{{en}}Copy{{/}}</button>
+          </div>
+          <p class="maven__after">{{de}}Danach zum Beispiel <code>sudo apt install freex-media-server</code>.{{en}}Then, for example, <code>sudo apt install freex-media-server</code>.{{/}}</p>
         </div>
       </div>
     </section>

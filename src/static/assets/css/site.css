@@ -540,6 +540,7 @@ code, pre {
 
 .maven { margin-top: 32px; }
 .maven > p { color: var(--muted); margin-bottom: 10px; }
+.maven > .maven__after { margin: 10px 0 0; font-size: 0.93rem; }
 .maven__box {
   position: relative;
   background: #0a0d13;
@@ -607,3 +608,9 @@ code, pre {
 
 /* The FreeX icon has no tile of its own. */
 .project--freex .project__head img { background: var(--raised); border: 1px solid var(--line); padding: 8px; }
+
+/* On narrow screens the copy button sits above the code instead of over it. */
+@media (max-width: 600px) {
+  .maven__box pre { padding: 54px 18px 18px; }
+}
+.maven__after code { white-space: nowrap; }
