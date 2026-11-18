@@ -68,7 +68,7 @@
   }
 
   async function initProjects() {
-    if (!document.querySelector("[data-version], [data-updated]")) return;
+    if (!document.querySelector("[data-version], [data-updated], [data-repo-count]")) return;
     let info = null;
     try {
       const res = await fetch(`${BASE}projects.json`, { cache: "no-cache" });
@@ -90,6 +90,13 @@
       el.innerHTML = '<span class="dot" aria-hidden="true"></span>';
       el.append(parts.join(" · "));
     });
+
+    const count = info._account && info._account.public_repos;
+    if (count) {
+      document.querySelectorAll("[data-repo-count]").forEach((el) => {
+        el.textContent = el.dataset["label" + (LANG === "de" ? "De" : "En")].replace("{n}", count) + " →";
+      });
+    }
 
     document.querySelectorAll("[data-updated]").forEach((el) => {
       const p = info[el.dataset.updated];

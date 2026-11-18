@@ -493,6 +493,10 @@ code, pre {
 .lib h3 { font-size: 0.98rem; font-family: ui-monospace, "SF Mono", Consolas, monospace; font-weight: 500; letter-spacing: 0; }
 .lib p { color: var(--muted); font-size: 0.93rem; }
 .lib__meta { margin-top: auto; font-size: 0.82rem; color: #7b8496; }
+.lib--more { border-style: dashed; border-color: #2c3446; background: transparent; }
+.lib--more h3 { font-family: inherit; font-weight: 400; font-size: 1.05rem; }
+.lib--more .lib__meta { color: var(--amber); }
+.lib--more .lib__meta::before { display: none; }
 .lib__meta::before {
   content: "";
   display: inline-block;

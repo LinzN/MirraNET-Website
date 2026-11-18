@@ -82,6 +82,10 @@ for key in "${!REPOS[@]}"; do
   out="$(jq --arg k "$key" --argjson v "$entry" '. + {($k): $v}' <<<"$out")"
   echo "$repo: $(jq -r '.release.tag // "no release"' <<<"$entry")"
 done
+# Number of public repositories of the LinzN account, for "see all N repositories".
+account="$(api "users/LinzN" || echo 'null')"
+out="$(jq --argjson a "$account" '. + {_account: {public_repos: ($a.public_repos // null)}}' <<<"$out")"
+
 jq -S . <<<"$out" > "$SITE_DIR/projects.json"
 
 echo "Synced ${#ICONS[@]} icons and ${#REPOS[@]} repositories into projects.json."
