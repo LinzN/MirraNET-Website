@@ -1,0 +1,4 @@
+# Build output: scripts/build.py renders src/ into site/,
+# scripts/sync-projects.sh adds the project icons and projects.json.
+site/
+.projects/

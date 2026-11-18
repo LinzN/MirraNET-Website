@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="{{lang}}" data-base="{{base}}">
+<head>
+  <title>{{de}}MirraNET – Open-Source-Software für Zuhause, Medien und Büro{{en}}MirraNET – Open-source software for the home, media and office{{/}}</title>
+  <meta name="description" content="{{de}}MirraNET ist das Dach über einer Familie von Open-Source-Projekten: das Smart-Home-Framework STEM mit der KI-Assistentin Mirra, der Medienserver FreeX, die Office-Suite Ondura, die Sprachlern-App Parla und eine Reihe von Java-Bibliotheken – gebaut und betrieben auf eigener Infrastruktur.{{en}}MirraNET is the roof over a family of open-source projects: the smart home framework STEM with the AI assistant Mirra, the media server FreeX, the office suite Ondura, the language learning app Parla and a set of Java libraries – built and run on its own infrastructure.{{/}}">
+  <meta property="og:title" content="{{de}}MirraNET – ein Netz, viele Projekte{{en}}MirraNET – one network, many projects{{/}}">
+  <meta property="og:description" content="{{de}}Smart Home, Medien, Office und Sprachenlernen – Open Source, selbst gehostet, ohne Telemetrie.{{en}}Smart home, media, office and language learning – open source, self-hosted, no telemetry.{{/}}">
+  <meta property="og:image" content="https://mirranet.de/assets/brand/social-preview.png">
+  <meta property="og:url" content="{{url:{{lang}}}}">
+  <link rel="canonical" href="{{url:{{lang}}}}">
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+  <main id="content">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">{{de}}Open Source · Selbst gehostet · Ohne Telemetrie{{en}}Open source · Self-hosted · No telemetry{{/}}</p>
+          <h1>{{de}}Ein Netz.<br><span class="grad">Viele Projekte.</span>{{en}}One network.<br><span class="grad">Many projects.</span>{{/}}</h1>
+          <p class="hero__lede">{{de}}MirraNET ist das System hinter einer ganzen Familie von Software: ein Smart Home, das von einer KI-Assistentin gesteuert wird, ein eigener Medienserver, eine Office-Suite, eine Sprachlern-App und die Bibliotheken, die alles zusammenhalten. Alles ist Open Source, läuft auf eigener Hardware und wird auf eigenen Servern gebaut.{{en}}MirraNET is the system behind a whole family of software: a smart home run by an AI assistant, a media server, an office suite, a language learning app and the libraries that hold it all together. Everything is open source, runs on hardware you own and is built on MirraNET's own servers.{{/}}</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">{{de}}Projekte ansehen{{en}}Explore the projects{{/}}</a>
+            <a class="btn btn--ghost" href="https://github.com/LinzN">{{de}}Auf GitHub{{en}}On GitHub{{/}}</a>
+          </div>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <div class="orbit">
+            <svg class="orbit__lines" viewBox="0 0 400 400">
+              <path d="M200 200 L200 52"/><path d="M200 200 L348 200"/><path d="M200 200 L200 348"/><path d="M200 200 L52 200"/>
+              <path class="orbit__pulse" d="M200 200 L200 52"/><path class="orbit__pulse" d="M200 200 L348 200"/>
+              <path class="orbit__pulse" d="M200 200 L200 348"/><path class="orbit__pulse" d="M200 200 L52 200"/>
+            </svg>
+            <img class="orbit__core" src="{{base}}assets/brand/mirranet-mark.svg" alt="" width="170" height="170">
+            <span class="orbit__node orbit__node--n"><img src="{{base}}assets/brand/stem.svg" alt="" width="44" height="44">STEM</span>
+            <span class="orbit__node orbit__node--e"><img src="{{base}}assets/brand/freex.svg" alt="" width="44" height="44">FreeX</span>
+            <span class="orbit__node orbit__node--s"><img src="{{base}}assets/brand/ondura.svg" alt="" width="44" height="44">Ondura</span>
+            <span class="orbit__node orbit__node--w"><img src="{{base}}assets/brand/parla.svg" alt="" width="44" height="44">Parla</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="wrap">
+        <h2 class="section__title">{{de}}Die Projekte{{en}}The projects{{/}}</h2>
+        <p class="section__intro">{{de}}Jedes Projekt hat sein eigenes Zuhause auf GitHub, seine eigenen Releases und – wo es passt – eine eigene Website. MirraNET ist das, was sie verbindet.{{en}}Every project has its own home on GitHub, its own releases and, where it fits, its own website. MirraNET is what connects them.{{/}}</p>
+
+        <div class="projects">
+          <article class="project project--stem">
+            <div class="project__head">
+              <img src="{{base}}assets/brand/stem.svg" alt="" width="56" height="56">
+              <div>
+                <h3>STEM &amp; Mirra</h3>
+                <p class="project__kind">{{de}}Smart Home und KI-Assistentin{{en}}Smart home and AI assistant{{/}}</p>
+              </div>
+            </div>
+            <p>{{de}}Das Herz von MirraNET: ein modulares Java-Framework, das Geräte, Dienste und Automationen im ganzen Haus steuert – und Mirra, die KI-Assistentin, die STEM per Chat bedient.{{en}}The heart of MirraNET: a modular Java framework that runs devices, services and automations across the house – and Mirra, the AI assistant who operates STEM through chat.{{/}}</p>
+            <ul class="tags"><li>Java</li><li>MQTT</li><li>Plugins</li><li>OpenAI</li></ul>
+            <p class="project__meta" data-version="stem"></p>
+            <div class="project__links">
+              <a href="#stem">{{de}}Mehr erfahren{{en}}Learn more{{/}}</a>
+              <a href="https://github.com/LinzN/Stem">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project project--freex">
+            <div class="project__head">
+              <img src="{{base}}assets/brand/freex.svg" alt="" width="56" height="56">
+              <div>
+                <h3>FreeX</h3>
+                <p class="project__kind">{{de}}Medienserver für Filme und Serien{{en}}Media server for movies and TV shows{{/}}</p>
+              </div>
+            </div>
+            <p>{{de}}Macht aus Ordnern mit Filmen und Serien eine Bibliothek mit Bildern und Infos – mit Apps für Browser, Fernseher, Smartphone, Desktop und Kodi. Kein Konto bei Dritten, keine Cloud.{{en}}Turns folders of movies and TV shows into a library with artwork and details – with apps for the browser, TV, phone, desktop and Kodi. No third-party account, no cloud.{{/}}</p>
+            <ul class="tags"><li>Rust</li><li>Web</li><li>TV</li><li>Android · iOS</li><li>Kodi</li></ul>
+            <p class="project__meta" data-version="freex"></p>
+            <div class="project__links">
+              <a href="https://freex.mirranet.de/">freex.mirranet.de</a>
+              <a href="https://github.com/FreeX-Studio">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project project--ondura">
+            <div class="project__head">
+              <img src="{{base}}assets/brand/ondura.svg" alt="" width="56" height="56">
+              <div>
+                <h3>Ondura</h3>
+                <p class="project__kind">{{de}}Office-Suite für Windows und Linux{{en}}Office suite for Windows and Linux{{/}}</p>
+              </div>
+            </div>
+            <p>{{de}}E-Mail mit Kalender, Kontakten und Aufgaben, dazu Text, Tabellen und Präsentation. Funktioniert mit Microsoft&nbsp;365, Exchange und jedem IMAP-Server und öffnet Office-Dateien direkt.{{en}}E-mail with calendar, contacts and tasks, plus a word processor, spreadsheets and presentations. Works with Microsoft&nbsp;365, Exchange and any IMAP server and opens Office files directly.{{/}}</p>
+            <ul class="tags"><li>TypeScript</li><li>Windows</li><li>Linux</li><li>Exchange</li></ul>
+            <p class="project__meta" data-version="ondura"></p>
+            <div class="project__links">
+              <a href="https://ondura.mirranet.de/">ondura.mirranet.de</a>
+              <a href="https://github.com/Ondura-Suite">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project project--parla">
+            <div class="project__head">
+              <img src="{{base}}assets/brand/parla.svg" alt="" width="56" height="56">
+              <div>
+                <h3>Parla</h3>
+                <p class="project__kind">{{de}}Ruhige, einfache Sprachlern-App{{en}}A calm, simple language learning app{{/}}</p>
+              </div>
+            </div>
+            <p>{{de}}Kurze Lektionen, drei Herzen und Stärkebalken, die zur Wiederholung auffordern – sonst nichts. Keine Werbung, keine Edelsteine, keine Ligen. Inhalte und Fortschritt kommen vom eigenen Server.{{en}}Short lessons, three hearts and strength bars that ask for review – and nothing else. No ads, no gems, no leagues. Content and progress come from its own server.{{/}}</p>
+            <ul class="tags"><li>Kotlin</li><li>SwiftUI</li><li>Rust</li><li>Android · iOS · Desktop</li></ul>
+            <p class="project__meta" data-version="parla"></p>
+            <div class="project__links">
+              <a href="https://github.com/Parla-Studio/parla">{{de}}App auf GitHub{{en}}App on GitHub{{/}}</a>
+              <a href="https://github.com/Parla-Studio/parla-server">Server</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stem" class="section section--band">
+      <div class="wrap">
+        <h2 class="section__title">{{de}}Ein Haus, das mitdenkt.{{en}}A house that thinks along.{{/}}</h2>
+        <p class="section__intro">{{de}}<strong>STEM</strong> – Smart Technology Framework for Enhanced Home Management – hält Geräte, Netzwerkdienste und Automationen zusammen. <strong>Mirra</strong> – Multifunctional Intelligent Real-time Responsive Assistant – ist die Stimme davon.{{en}}<strong>STEM</strong> – Smart Technology Framework for Enhanced Home Management – holds devices, network services and automations together. <strong>Mirra</strong> – Multifunctional Intelligent Real-time Responsive Assistant – is its voice.{{/}}</p>
+
+        <div class="split">
+          <div class="split__col">
+            <h3>STEM</h3>
+            <ul class="checks">
+              <li>{{de}}Ein zentraler Ort für Geräte, Netzwerkdienste und Automationen – mit Live-Status aller wichtigen Komponenten.{{en}}One place for devices, network services and automations – with live status of every important component.{{/}}</li>
+              <li>{{de}}Plugins gegen eine schlanke API (<code>stem-api</code>): Scheduler, MQTT und mehr. Was ein Plugin registriert, wird beim Deaktivieren automatisch entfernt.{{en}}Plugins against a lean API (<code>stem-api</code>): scheduler, MQTT and more. Everything a plugin registers is removed automatically when it's disabled.{{/}}</li>
+              <li>{{de}}<a href="https://github.com/LinzN/Home-devices">home-devices</a> bindet Tasmota- und Zigbee-Schalter, Sensoren, Thermostate, USV, 3D-Drucker und Klimaanlagen über MQTT ein – mit Profilen wie Homeoffice, Urlaub oder Standby.{{en}}<a href="https://github.com/LinzN/Home-devices">home-devices</a> connects Tasmota and Zigbee switches, sensors, thermostats, UPS, 3D printers and air conditioners over MQTT – with profiles such as home office, holiday or standby.{{/}}</li>
+              <li>{{de}}<a href="https://github.com/LinzN/web-dashboard">web-dashboard</a> liefert das MirraNET-Dashboard direkt aus STEM aus – Seite und API hinter einem gemeinsamen Login.{{en}}<a href="https://github.com/LinzN/web-dashboard">web-dashboard</a> serves the MirraNET dashboard straight from STEM – page and API behind one shared login.{{/}}</li>
+            </ul>
+          </div>
+          <div class="split__col">
+            <h3>Mirra</h3>
+            <ul class="checks">
+              <li>{{de}}Ein KI-Agent auf Basis der OpenAI Responses API, der auf Discord und WhatsApp mit Menschen spricht.{{en}}An AI agent built on the OpenAI Responses API who talks to people on Discord and WhatsApp.{{/}}</li>
+              <li>{{de}}Steuert STEM: Status, Plugins, Health-Checks, Benachrichtigungen, Skripte, MQTT, Geräte und Smart-Home-Profile – abgesichert über Berechtigungen.{{en}}Controls STEM: status, plugins, health checks, notifications, scripts, MQTT, devices and smart home profiles – gated by permissions.{{/}}</li>
+              <li>{{de}}Merkt sich über Chats hinweg, was ihr erzählt wird, mit einem Profil pro Person.{{en}}Remembers what people tell her across chats, with one profile per person.{{/}}</li>
+              <li>{{de}}Übersetzt Systemereignisse von STEM in verständliche Nachrichten.{{en}}Turns STEM system events into readable messages.{{/}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class="code">
+          <figcaption>{{de}}Ein STEM-Plugin in zwei Zeilen{{en}}A STEM plugin in two lines{{/}}</figcaption>
+<pre><code><span class="c-k">getStemApi</span>().scheduler().runRepeating(<span class="c-v">this</span>::poll, <span class="c-n">0</span>, <span class="c-n">30</span>, TimeUnit.SECONDS);
+<span class="c-k">getStemApi</span>().mqtt().subscribe(<span class="c-s">"home/+/temperature"</span>, (topic, payload) -&gt; { <span class="c-c">/* ... */</span> });</code></pre>
+        </figure>
+
+        <div class="inline-links">
+          <a class="btn btn--ghost" href="https://github.com/LinzN/Stem">STEM {{de}}auf GitHub{{en}}on GitHub{{/}}</a>
+          <a class="btn btn--ghost" href="https://github.com/LinzN/mirra">Mirra {{de}}auf GitHub{{en}}on GitHub{{/}}</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="libraries" class="section">
+      <div class="wrap">
+        <h2 class="section__title">{{de}}Bibliotheken und Bridges{{en}}Libraries and bridges{{/}}</h2>
+        <p class="section__intro">{{de}}Die Bausteine darunter – klein, ohne unnötige Abhängigkeiten und für jeden nutzbar, nicht nur für STEM. Die Java-Artefakte liegen im eigenen Maven-Repository.{{en}}The building blocks underneath – small, without needless dependencies and usable by anyone, not just STEM. The Java artifacts are published to MirraNET's own Maven repository.{{/}}</p>
+
+        <div class="libs">
+          <a class="lib" href="https://github.com/LinzN/midea-ac">
+            <h3>midea-ac</h3>
+            <p>{{de}}Midea-Klimaanlagen (und Comfee, Carrier, Toshiba …) aus Java im lokalen Netz steuern – Protokoll V2 und V3, ohne Cloud zur Laufzeit, ohne Abhängigkeiten.{{en}}Control Midea air conditioners (and Comfee, Carrier, Toshiba …) from Java over the local network – protocol V2 and V3, no cloud at runtime, no dependencies.{{/}}</p>
+            <span class="lib__meta" data-updated="midea-ac">Java</span>
+          </a>
+          <a class="lib" href="https://github.com/LinzN/midea2mqtt">
+            <h3>midea2mqtt</h3>
+            <p>{{de}}Eigenständige Bridge zwischen Midea-Klimaanlagen und einem lokalen MQTT-Broker – für Home Assistant, Node-RED, STEM oder alles, was MQTT spricht.{{en}}A standalone bridge between Midea air conditioners and a local MQTT broker – for Home Assistant, Node-RED, STEM or anything that speaks MQTT.{{/}}</p>
+            <span class="lib__meta" data-updated="midea2mqtt">Java</span>
+          </a>
+          <a class="lib" href="https://github.com/LinzN/snapmaker2mqtt">
+            <h3>snapmaker2mqtt</h3>
+            <p>{{de}}Status und Ereignisse des Snapmaker U1 – Druck fertig, Filament geladen, Werkzeugwechsel – live per MQTT, über Moonraker, ohne etwas am Drucker zu ändern.{{en}}State and events of the Snapmaker U1 – print finished, filament loaded, toolhead changed – live over MQTT via Moonraker, without changing anything on the printer.{{/}}</p>
+            <span class="lib__meta" data-updated="snapmaker2mqtt">Java</span>
+          </a>
+          <a class="lib" href="https://github.com/LinzN/wiim-java-api">
+            <h3>wiim-java-api</h3>
+            <p>{{de}}Java-Implementierung der WiiM-HTTP-API zur Steuerung von WiiM Pro und WiiM Mini.{{en}}A Java implementation of the WiiM HTTP API to control the WiiM Pro and WiiM Mini.{{/}}</p>
+            <span class="lib__meta" data-updated="wiim-java-api">Java</span>
+          </a>
+          <a class="lib" href="https://github.com/LinzN/SimplyConfiguration">
+            <h3>SimplyConfiguration</h3>
+            <p>{{de}}Eine einfache Konfigurationsbibliothek für die MirraNET-Projekte.{{en}}A simple configuration library for the MirraNET projects.{{/}}</p>
+            <span class="lib__meta" data-updated="SimplyConfiguration">Java</span>
+          </a>
+          <a class="lib" href="https://github.com/LinzN/SimplyLogger">
+            <h3>SimplyLogger</h3>
+            <p>{{de}}Ein einfacher Logger für die MirraNET-Projekte.{{en}}A simple logger for the MirraNET projects.{{/}}</p>
+            <span class="lib__meta" data-updated="SimplyLogger">Java</span>
+          </a>
+          <a class="lib" href="https://github.com/LinzN/OpenJL">
+            <h3>OpenJL</h3>
+            <p>{{de}}Gemeinsame Hilfsbibliothek, die die Java-Projekte von MirraNET teilen.{{en}}A shared helper library used across MirraNET's Java projects.{{/}}</p>
+            <span class="lib__meta" data-updated="OpenJL">Java</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="infrastructure" class="section section--band">
+      <div class="wrap">
+        <h2 class="section__title">{{de}}Gebaut und ausgeliefert im eigenen Haus.{{en}}Built and shipped in-house.{{/}}</h2>
+        <p class="section__intro">{{de}}Vom Quellcode bis zum Paket läuft alles über offene Repositories und eigene Server – keine Plattform dazwischen, die man nicht selbst in der Hand hat.{{en}}From source code to package, everything runs through open repositories and MirraNET's own servers – no platform in between that isn't under its own control.{{/}}</p>
+
+        <ol class="pipeline">
+          <li>
+            <span class="pipeline__step">01</span>
+            <h3>{{de}}Quellcode{{en}}Source{{/}}</h3>
+            <p>{{de}}Offen auf GitHub – unter <a href="https://github.com/LinzN">LinzN</a>, <a href="https://github.com/FreeX-Studio">FreeX-Studio</a>, <a href="https://github.com/Ondura-Suite">Ondura-Suite</a> und <a href="https://github.com/Parla-Studio">Parla-Studio</a>.{{en}}Open on GitHub – under <a href="https://github.com/LinzN">LinzN</a>, <a href="https://github.com/FreeX-Studio">FreeX-Studio</a>, <a href="https://github.com/Ondura-Suite">Ondura-Suite</a> and <a href="https://github.com/Parla-Studio">Parla-Studio</a>.{{/}}</p>
+          </li>
+          <li>
+            <span class="pipeline__step">02</span>
+            <h3>Build</h3>
+            <p>{{de}}Der eigene Jenkins unter <a href="https://builds.mirranet.de/">builds.mirranet.de</a> baut Jars, Installer und Pakete.{{en}}MirraNET's own Jenkins at <a href="https://builds.mirranet.de/">builds.mirranet.de</a> builds the jars, installers and packages.{{/}}</p>
+          </li>
+          <li>
+            <span class="pipeline__step">03</span>
+            <h3>{{de}}Pakete{{en}}Packages{{/}}</h3>
+            <p>{{de}}Java-Artefakte im <a href="https://builds.mirranet.de/plugin/repository/everything/">Maven-Repository</a>, Linux-Pakete aus der APT-Quelle <code>apt.mirranet.de</code>, Apps über GitHub Releases.{{en}}Java artifacts in the <a href="https://builds.mirranet.de/plugin/repository/everything/">Maven repository</a>, Linux packages from the APT repository <code>apt.mirranet.de</code>, apps through GitHub Releases.{{/}}</p>
+          </li>
+          <li>
+            <span class="pipeline__step">04</span>
+            <h3>{{de}}Betrieb{{en}}Running{{/}}</h3>
+            <p>{{de}}Auf eigener Hardware – zu Hause oder auf dem eigenen Server. Ohne Konto bei Dritten und ohne Telemetrie.{{en}}On hardware you own – at home or on your own server. No third-party account and no telemetry.{{/}}</p>
+          </li>
+        </ol>
+
+        <div class="maven">
+          <p>{{de}}Eine Bibliothek in einem eigenen Projekt nutzen:{{en}}Use a library in your own project:{{/}}</p>
+          <div class="maven__box">
+            <pre><code>&lt;repository&gt;
+  &lt;id&gt;mirranet&lt;/id&gt;
+  &lt;url&gt;https://builds.mirranet.de/plugin/repository/everything/&lt;/url&gt;
+&lt;/repository&gt;</code></pre>
+            <button class="copy" type="button" data-copy>{{de}}Kopieren{{en}}Copy{{/}}</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="wrap cta__box">
+        <img src="{{base}}assets/brand/mirranet-mark.svg" alt="" width="72" height="72">
+        <div>
+          <h2>{{de}}Mitlesen, ausprobieren, mitbauen.{{en}}Read along, try it, build with it.{{/}}</h2>
+          <p>{{de}}Fehler, Ideen und Pull Requests sind in jedem Repository willkommen.{{en}}Bug reports, ideas and pull requests are welcome in every repository.{{/}}</p>
+        </div>
+        <div class="cta__links">
+          <a class="btn btn--primary" href="https://github.com/LinzN">GitHub</a>
+          <a class="btn btn--ghost" href="mailto:niklas.linz@mirranet.de">{{de}}E-Mail schreiben{{en}}Send an e-mail{{/}}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{{> footer}}
+</body>
+</html>

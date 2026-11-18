@@ -1,0 +1,76 @@
+name: Deploy website
+
+# The site is rebuilt whenever this repo changes and regularly in between,
+# so new releases and icons of the MirraNET projects show up on mirranet.de
+# without anyone touching this repo.
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "41 */6 * * *"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [project-updated]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check out FreeX Media Server (icon)
+        uses: actions/checkout@v5
+        continue-on-error: true
+        with:
+          repository: FreeX-Studio/Freex-Media-Server
+          path: .projects/freex
+          sparse-checkout: docs/brand
+
+      - name: Check out Ondura Core (icon)
+        uses: actions/checkout@v5
+        continue-on-error: true
+        with:
+          repository: Ondura-Suite/Ondura-Core
+          path: .projects/ondura
+          sparse-checkout: apps/ondura/public
+
+      - name: Check out Parla (icon)
+        uses: actions/checkout@v5
+        continue-on-error: true
+        with:
+          repository: Parla-Studio/parla
+          path: .projects/parla
+          sparse-checkout: docs
+
+      - name: Build pages (English and German)
+        run: python3 scripts/build.py site
+
+      - name: Sync project icons and repository info
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: scripts/sync-projects.sh .projects site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
