@@ -58,31 +58,40 @@ declare -A REPOS=(
   [wiim-java-api]=LinzN/wiim-java-api
 )
 
-out="{}"
+# API responses can be large (release notes, assets), so they never go
+# through the command line: each one is reduced by jq straight from the
+# stream to the few fields the page needs, and the results are collected
+# in a temporary directory.
+tmp="$(mktemp -d)"
+trap 'rm -rf "$tmp"' EXIT
+
 for key in "${!REPOS[@]}"; do
   repo="${REPOS[$key]}"
-  meta="$(api "repos/$repo" || echo 'null')"
-  releases="$(api "repos/$repo/releases?per_page=20" || echo '[]')"
-  entry="$(jq -n --arg repo "$repo" --argjson meta "$meta" --argjson releases "$releases" '
-    ((if ($releases | type) == "array" then $releases else [] end) | map(select(.draft | not)) | first) as $r |
+  { api "repos/$repo" || echo 'null'; } \
+    | jq '{url: (.html_url? // null), language: (.language? // null), pushed_at: (.pushed_at? // null)}' \
+    > "$tmp/meta.json"
+  { api "repos/$repo/releases?per_page=20" || echo '[]'; } \
+    | jq '(if type == "array" then . else [] end) | map(select(.draft | not)) | first
+          | if . == null then null else {tag: .tag_name, published_at: .published_at, html_url: .html_url} end' \
+    > "$tmp/release.json"
+  jq -n --arg repo "$repo" --slurpfile meta "$tmp/meta.json" --slurpfile release "$tmp/release.json" '
     {
       repo: $repo,
-      url: ($meta.html_url // "https://github.com/\($repo)"),
-      language: ($meta.language // null),
-      pushed_at: ($meta.pushed_at // null),
-      release: (if $r == null then null else {
-        tag: $r.tag_name,
-        published_at: $r.published_at,
-        html_url: $r.html_url
-      } end)
-    }')"
-  out="$(jq --arg k "$key" --argjson v "$entry" '. + {($k): $v}' <<<"$out")"
-  echo "$repo: $(jq -r '.release.tag // "no release"' <<<"$entry")"
+      url: ($meta[0].url // "https://github.com/\($repo)"),
+      language: $meta[0].language,
+      pushed_at: $meta[0].pushed_at,
+      release: $release[0]
+    }' > "$tmp/entry-$key.json"
+  echo "$repo: $(jq -r '.release.tag // "no release"' "$tmp/entry-$key.json")"
 done
-# Number of public repositories of the LinzN account, for "see all N repositories".
-account="$(api "users/LinzN" || echo 'null')"
-out="$(jq --argjson a "$account" '. + {_account: {public_repos: ($a.public_repos // null)}}' <<<"$out")"
 
-jq -S . <<<"$out" > "$SITE_DIR/projects.json"
+# Number of public repositories of the LinzN account, for "see all N repositories".
+{ api "users/LinzN" || echo 'null'; } | jq '{public_repos: (.public_repos? // null)}' > "$tmp/account.json"
+
+# Merge everything into one object keyed by project.
+for key in "${!REPOS[@]}"; do
+  jq --arg k "$key" '{($k): .}' "$tmp/entry-$key.json"
+done | jq -s --slurpfile account "$tmp/account.json" 'add + {_account: $account[0]}' \
+  | jq -S . > "$SITE_DIR/projects.json"
 
 echo "Synced ${#ICONS[@]} icons and ${#REPOS[@]} repositories into projects.json."
