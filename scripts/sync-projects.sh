@@ -56,9 +56,6 @@ declare -A REPOS=(
   [midea2mqtt]=LinzN/midea2mqtt
   [snapmaker2mqtt]=LinzN/snapmaker2mqtt
   [wiim-java-api]=LinzN/wiim-java-api
-  [SimplyConfiguration]=LinzN/SimplyConfiguration
-  [SimplyLogger]=LinzN/SimplyLogger
-  [OpenJL]=LinzN/OpenJL
 )
 
 out="{}"
