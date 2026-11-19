@@ -226,7 +226,6 @@ code, pre {
   max-width: 36em;
   font-weight: 300;
 }
-.hero__sig { margin-top: 14px; color: var(--muted); font-style: italic; font-weight: 300; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 
 .orbit {
