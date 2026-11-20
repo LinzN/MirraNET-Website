@@ -1,6 +1,6 @@
 # MirraNET website
 
-Source of [www.mirranet.de](https://www.mirranet.de), the home page of MirraNET – the system behind [STEM](https://github.com/LinzN/Stem) and [Mirra](https://github.com/LinzN/mirra), [FreeX](https://github.com/FreeX-Studio), [Ondura](https://github.com/Ondura-Suite), [Parla](https://github.com/Parla-Studio) and the libraries under [LinzN](https://github.com/LinzN). Plain HTML, CSS and a little JavaScript, in English and German – no framework, no external requests from the visitor's browser. Built the same way as the [FreeX](https://github.com/FreeX-Studio/FreeX-Website) and [Ondura](https://github.com/Ondura-Suite/Ondura-Website) websites.
+Source of [www.mirranet.de](https://www.mirranet.de), the home page of MirraNET – the system behind [STEM](https://github.com/LinzN/Stem) and [Mirra](https://github.com/LinzN/mirra), [FreeX](https://github.com/FreeX-Studio), [Ondura](https://github.com/Ondura-Suite), [Parla](https://github.com/Parla-Studio), [Obsidia](https://github.com/LinzN/Obsidia) and the libraries under [LinzN](https://github.com/LinzN). Plain HTML, CSS and a little JavaScript, in English and German – no framework, no external requests from the visitor's browser. Built the same way as the [FreeX](https://github.com/FreeX-Studio/FreeX-Website) and [Ondura](https://github.com/Ondura-Suite/Ondura-Website) websites.
 
 ## Languages
 
@@ -27,6 +27,7 @@ The MirraNET mark, the STEM icon and the social preview live in this repository 
 | FreeX icon | [Freex-Media-Server](https://github.com/FreeX-Studio/Freex-Media-Server) `docs/brand/freex-app-icon.svg` | `site/assets/brand/freex.svg` |
 | Ondura icon | [Ondura-Core](https://github.com/Ondura-Suite/Ondura-Core) `apps/ondura/public/ondura.svg` | `site/assets/brand/ondura.svg` |
 | Parla icon | [parla](https://github.com/Parla-Studio/parla) `docs/logo.svg` | `site/assets/brand/parla.svg` |
+| Obsidia icon | [Obsidia](https://github.com/LinzN/Obsidia) `assets/logo.svg` | `site/assets/brand/obsidia.svg` |
 | Latest release, language and last activity of every listed repository | GitHub API | `site/projects.json` |
 
 A missing icon is reported in the build log and replaced by the MirraNET mark, so a renamed file in one project never breaks the site. The list of repositories is at the top of [`scripts/sync-projects.sh`](scripts/sync-projects.sh); a new project needs an entry there and a card in `src/pages/index.html`.
@@ -70,6 +71,7 @@ mkdir -p .projects
 git clone --depth 1 https://github.com/FreeX-Studio/Freex-Media-Server.git .projects/freex
 git clone --depth 1 https://github.com/Ondura-Suite/Ondura-Core.git .projects/ondura
 git clone --depth 1 https://github.com/Parla-Studio/parla.git .projects/parla
+git clone --depth 1 https://github.com/LinzN/Obsidia.git .projects/obsidia
 python3 scripts/build.py
 scripts/sync-projects.sh .projects site      # needs bash 4+, curl and jq
 python3 -m http.server -d site 8080

@@ -51,6 +51,14 @@ jobs:
           path: .projects/parla
           sparse-checkout: docs
 
+      - name: Check out Obsidia (icon)
+        uses: actions/checkout@v5
+        continue-on-error: true
+        with:
+          repository: LinzN/Obsidia
+          path: .projects/obsidia
+          sparse-checkout: assets
+
       - name: Build pages (English and German)
         run: python3 scripts/build.py site
 

@@ -5,9 +5,9 @@
 #
 # Usage: scripts/sync-projects.sh <checkouts-dir> [site-dir]
 #
-# <checkouts-dir> holds (sparse) checkouts named freex/, ondura/ and parla/
-# (FreeX-Studio/Freex-Media-Server, Ondura-Suite/Ondura-Core and
-# Parla-Studio/parla). A missing checkout or icon is reported and replaced
+# <checkouts-dir> holds (sparse) checkouts named freex/, ondura/, parla/ and
+# obsidia/ (FreeX-Studio/Freex-Media-Server, Ondura-Suite/Ondura-Core,
+# Parla-Studio/parla and LinzN/Obsidia). A missing checkout or icon is reported and replaced
 # by the MirraNET mark, so one renamed file never breaks the whole site.
 # GITHUB_TOKEN is optional; without it the GitHub API rate limit for
 # anonymous requests applies (fine for local use).
@@ -24,6 +24,7 @@ declare -A ICONS=(
   [freex]="freex/docs/brand/freex-app-icon.svg"
   [ondura]="ondura/apps/ondura/public/ondura.svg"
   [parla]="parla/docs/logo.svg"
+  [obsidia]="obsidia/assets/logo.svg"
 )
 for key in "${!ICONS[@]}"; do
   src="$SRC_DIR/${ICONS[$key]}"
@@ -52,6 +53,7 @@ declare -A REPOS=(
   [ondura]=Ondura-Suite/Ondura-Core
   [parla]=Parla-Studio/parla
   [parla-server]=Parla-Studio/parla-server
+  [obsidia]=LinzN/Obsidia
   [midea-ac]=LinzN/midea-ac
   [midea2mqtt]=LinzN/midea2mqtt
   [snapmaker2mqtt]=LinzN/snapmaker2mqtt

@@ -24,6 +24,7 @@
   --freex: #f0974a;
   --ondura: #5b78e6;
   --parla: #7ccb1a;
+  --obsidia: #60cdff;
 
   --radius-card: 12px;
   --radius-control: 999px;
@@ -257,9 +258,10 @@ code, pre {
   stroke-dashoffset: 0;
   animation: pulse 3.2s linear infinite;
 }
-.orbit__lines .orbit__pulse:nth-of-type(6) { animation-delay: 0.8s; }
-.orbit__lines .orbit__pulse:nth-of-type(7) { animation-delay: 1.6s; }
-.orbit__lines .orbit__pulse:nth-of-type(8) { animation-delay: 2.4s; }
+.orbit__lines .orbit__pulse:nth-of-type(7) { animation-delay: 0.64s; }
+.orbit__lines .orbit__pulse:nth-of-type(8) { animation-delay: 1.28s; }
+.orbit__lines .orbit__pulse:nth-of-type(9) { animation-delay: 1.92s; }
+.orbit__lines .orbit__pulse:nth-of-type(10) { animation-delay: 2.56s; }
 @keyframes pulse {
   from { stroke-dashoffset: 0; opacity: 1; }
   70% { opacity: 1; }
@@ -294,10 +296,11 @@ code, pre {
   border: 1px solid var(--line);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
-.orbit__node--n { left: 50%; top: 11%; }
-.orbit__node--e { left: 88%; top: 50%; }
-.orbit__node--s { left: 50%; top: 89%; }
-.orbit__node--w { left: 12%; top: 50%; }
+.orbit__node--1 { left: 50%; top: 10%; }
+.orbit__node--2 { left: 88%; top: 37%; }
+.orbit__node--3 { left: 74%; top: 84%; }
+.orbit__node--4 { left: 26%; top: 84%; }
+.orbit__node--5 { left: 12%; top: 37%; }
 
 @media (prefers-reduced-motion: reduce) {
   .orbit__lines .orbit__pulse { display: none; }
@@ -375,6 +378,10 @@ code, pre {
 .project--freex { --accent: var(--freex); }
 .project--ondura { --accent: var(--ondura); }
 .project--parla { --accent: var(--parla); }
+.project--obsidia { --accent: var(--obsidia); }
+
+/* STEM is the core of MirraNET, so its card spans the full row. */
+@media (min-width: 761px) { .project--stem { grid-column: 1 / -1; } }
 
 .project__head { display: flex; align-items: center; gap: 16px; }
 .project__head img { width: 46px; height: 46px; border-radius: 12px; flex: none; }
